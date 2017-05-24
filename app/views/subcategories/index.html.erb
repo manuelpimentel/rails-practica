@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-lg-12">
+  <h1> Subcategories </h1>
+</div>
+<div id="sortableTable" class="body collapse in">
+  <div class="box">    
+    <table class="table table-bordered sortableTable responsive-table">
+      <thead>
+        <tr>  
+          <th>Nombre<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+          <th>Descripción<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+          <th>Categoria<i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+          <th>Opciones <i class="icon-sort"></i><i class="icon-sort-down"></i> <i class="icon-sort-up"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @subcategories.each do |subcategory| %>
+          <tr>
+            <td><%= subcategory.nombre %></td>
+            <td><%= subcategory.descripcion %></td>
+            <%= f.association :category, label: false %>
+            <td>
+              <%= link_to '', subcategory, :class => "glyphicon glyphicon-search" %>
+                <%= link_to '', edit_subcategory_path(subcategory), :class => "glyphicon glyphicon-pencil" %>
+                <%= link_to '', subcategory, :class => "glyphicon glyphicon-trash", method: :delete, data: { confirm: '¿Estás seguro?' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Subcategory', new_subcategory_path, :class => "btn text-muted text-center btn-success" %>

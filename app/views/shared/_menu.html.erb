@@ -1,0 +1,29 @@
+<div class="media user-media well-small">
+                <a class="user-link" href="#">
+                    
+                    <%=image_tag "user.gif"%>
+
+                </a>
+                <br />
+                <div class="media-body">
+                    <h5 class="media-heading"> Joe Romlin</h5>
+                    <ul class="list-unstyled user-info">
+                        
+                        <li>
+                             <a class="btn btn-success btn-xs btn-circle" style="width: 10px;height: 12px;"></a> Online
+                           
+                        </li>
+                       
+                    </ul>
+                </div>
+                <br />
+            </div>
+
+            <ul id="menu" class="collapse">                
+                <li class="panel">                    
+                        <%= link_to 'Categories', categories_path %>
+                </li>
+                <li class="panel">                    
+                        <%= link_to 'Subcategories', subcategories_path %>
+                </li>
+            </ul>
